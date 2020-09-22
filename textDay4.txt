@@ -1,0 +1,55 @@
+Test Configuration
+
+Test Configuration
+To apply a specific Cypress configuration value to a suite or test, pass a configuration object to the test or suite function as the second argument.
+
+This configuration will take effect during the suite or tests where they are set then return to their previous default values after the suite or tests are complete.
+
+Syntax
+describe(name, config, fn)
+context(name, config, fn)
+it(name, config, fn)
+specify(name, config, fn)
+Allowed config values
+ Note: Some configuration values are readonly and cannot be changed via test configuration. The following configuration values can be changed via per test configuration:
+
+animationDistanceThreshold
+baseUrl
+browser
+defaultCommandTimeout
+execTimeout
+env
+requestTimeout
+responseTimeout
+retries
+viewportHeight
+viewportWidth
+waitForAnimations
+Suite configuration
+If you want to target a suite of tests to run or be excluded when run in a specific browser, you can override the browser configuration within the suite configuration. The browser option accepts the same arguments as Cypress.isBrowser().
+
+describe('When in Chrome', {  browser: '!chrome' }, () => {
+  it('Shows warning', () => {
+    cy.get('.browser-warning')
+      .should('contain', 'For optimal viewing, use Chrome browser')
+  })
+
+  it('Links to browser compatibility doc', () => {
+    cy.get('a.browser-compat')
+      .should('have.attr', 'href')
+      .and('include', 'browser-compatibility')
+  })
+})
+Single test configuration
+You can configure the number of retry attempts during cypress run or cypress open. See Test Retries for more information.
+
+it('should redirect unauthenticated user to sign-in page', {
+    retries: {
+      runMode: 3,
+      openMode: 2
+    }
+  } () => {
+    cy.visit('/')
+    // ...
+  })
+})

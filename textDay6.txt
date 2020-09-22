@@ -1,0 +1,110 @@
+BROWSER SELECTION (CHROME , ELECTRON ,FIREFOX) -->
+
+Running Tests in Chrome, Electron &
+Firefox
+
+Open the test runner and on the Right hannd corner , we have option to select
+various browsers.
+
+// Give a click glance and confirm how it selects different browsers
+
+
+WEBELEMEMTS AND SELECTORS -->
+
+WHY DO WE NEED SELECTORS ?
+
+https://docs.cypress.io/guides/references/best-practices.html
+
+
+DOCUMENT OBJECT MODEL (DOM) AND ELEMENTS 
+
+Please refer to the third ppt and create more examples in PPT for MINSKOLE
+
+PRATICAL INNDEPTH LOOK INTO THE SELECTOR PART 1
+
+Removing the XHR log , the code we need to add  at location 
+
+/Users/chinmaydeshpande/Desktop/cypress/cypress/support/index.js
+
+Cypress.Server.defaults({
+    ignore:xhr => true
+  })
+
+PRATICAL INNDEPTH LOOK INTO THE SELECTOR PART 2
+
+cypress/integration/automationteststore/dayFour.spec.js
+
+ it("should be able to sumit contact us form successfully",() =>{
+        cy.visit('https://automationteststore.com/')
+        cy.get('.info_links_footer > :nth-child(5) > a').click()
+        cy.get('#ContactUsFrm_first_name').type('Chinmay')
+        cy.get('#ContactUsFrm_email').type('chinmaydeshpande010@gmail.com')
+        cy.get('#ContactUsFrm_enquiry').type('Do you really take bulk orders?')
+        cy.get('.col-md-6 > .btn').click()
+       
+    })
+
+SELECTOR GENERATOR TOOLS(Ranorex Selocity/ Chropath)
+
+Install the google chrome extension 
+a[href = 'https://automationteststore.com/index.php?rt=content/contact']
+
+CSS SELECTORS
+
+please refer :- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors
+
+ it("should be able to sumit contact us form successfully",() =>{
+        cy.visit('https://automationteststore.com/')
+        //cy.get('li > a[href = "https://automationteststore.com/index.php?rt=content/contact"]').click()
+        cy.get('#ContactUsFrm_first_name').type('Chinmay')
+        cy.get('#ContactUsFrm_email').type('chinmaydeshpande010@gmail.com')
+        cy.get('#ContactUsFrm_enquiry').type('Do you really take bulk orders?')
+        //cy.get('button[title = "Submit"]').click()
+       
+    })
+
+
+
+XPATH SELECTORS
+
+npm install -D cypress-xpath
+
+Then include in your project's cypress/support/index.js
+
+require('cypress-xpath')
+
+
+
+Please add all the types with xpath for Minskole in path
+
+*******cypress/integration/webuniversity/dayFive.spec.js********
+
+https://devhints.io/xpath
+https://www.automatetheplanet.com/selenium-webdriver-locators-cheat-sheet/
+
+
+Use
+After installation your cy object will have xpath command.
+
+it('finds list items', () => {
+  cy.xpath('//ul[@class="todo-list"]//li')
+    .should('have.length', 3)
+})
+You can also chain xpath off of another command.
+
+it('finds list items', () => {
+  cy.xpath('//ul[@class="todo-list"]')
+    .xpath('./li')
+    .should('have.length', 3)
+})
+As with other cy commands, it is scoped by cy.within().
+
+it('finds list items', () => {
+  cy.xpath('//ul[@class="todo-list"]').within(() => {
+    cy.xpath('./li')
+      .should('have.length', 3)
+  });
+})
+
+
+

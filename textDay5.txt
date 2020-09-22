@@ -1,0 +1,98 @@
+KEEPING THE CYPRESS UP TO  DATE 
+
+// you can see latest update in cypress at the bottom of test runner 
+
+// You can update the cypress with the cypress command
+
+
+CYPRESS API OVERVIEW
+
+//https://docs.cypress.io/api/api/table-of-contents.html
+
+
+CYPRESS UPDATES (Change log)
+
+https://docs.cypress.io/guides/references/changelog.html
+
+
+SYSTEM UNDER TEST (URL)
+
+http://www.webdriveruniversity.com/
+
+https://www.automationteststore.com/
+
+MOCHA OVERVIEW 
+
+https://mochajs.org/
+
+CONSTRUCTING THE FIRSTTEST USING MOCHA 
+
+dayThree.spec.js
+
+BASIC CYPRESS COMMAND ---->
+
+COMMAND ACTIVATION AND INSPECTING SPECIFIC CYPRESS COMMAND
+
+/// <reference  types = "Cypress"/>
+
+dayThree.spec.js
+
+VISIT AND CLICK COMMAND
+
+dayThree.spec.js
+CLICK OPTIONS
+
+dayThree.spec.js
+https://docs.cypress.io/api/commands/click.html#Options
+cy.get('@closeBtn').click({ force: true })
+
+
+TYPE OPTIONS 
+dayThree.spec.js
+https://docs.cypress.io/api/api/table-of-contents.html
+
+
+
+CREATING OUR FIRST TEST THE CHALLEGE(THE CHALLENGE)
+
+CHALLENGE OVERVIEW
+
+http://www.webdriveruniversity.com/Contact-Us/contactus.html
+
+
+// Submit the complete form 
+
+CHALLENGE SOLUTION 
+
+// Code to submit the complete form
+
+dayThree.spec.js
+
+
+
+http://www.webdriveruniversity.com/Contact-Us/contactus.html
+
+CREATING THE SECOND CYPRESS TEST (NEGATIVE TESTCASE)
+
+No input for the mandatory field(email)
+
+dayThree.spec.js
+
+TARGETTIG THE INDIVIDUAL TEST VIA MOCHA
+
+it.only("should unable to submit form without required fields",() =>{
+
+       cy.visit('http://www.webdriveruniversity.com/Contact-Us/contactus.html')
+       cy.get('input[name ="first_name"]').type("Chinmay")
+       cy.get('input[name ="last_name"]').type("Deshpande")
+       cy.get('textarea[name ="message"]').type("How can I learn cypress effectively")
+       cy.get('#form_buttons > input:nth-child(2)').click()
+
+        
+    })
+
+
+
+
+
+

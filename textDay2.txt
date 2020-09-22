@@ -1,0 +1,114 @@
+ENVIROMENTAL SET UP  -->
+
+//CHROME  and FIREFOX  INSTALLATION 
+
+
+//Install and make sure both the browser are up to date
+
+https://www.google.com/chrome/
+https://www.mozilla.org/en-GB/
+
+
+// NODE JS SETUP
+
+https://nodejs.org/en/download/
+
+verify the set up with command 
+
+node --v
+
+// GIT BASH SETUP
+
+https://git-scm.com/downloads
+
+git --version
+
+// VISUAL STUDIO CODE
+
+https://code.visualstudio.com/download
+
+// code >> preferences >> color theme  to change color of visual studio code
+----------------------------------------------------------------------------------------
+
+// CYPRESS SET UP -->
+
+
+CYPRESS INSTALLATION AND SETUP
+
+Create one empty folder on the desktop with 'cypress automation framework'
+
+Open the same folder on visual studio code.
+
+Via terminal with npm init command Create package.jason file 
+
+---------------npm init
+
+(Package jason file is used to manage your dependencies)
+
+
+---------------npm install cypress --save-dev
+
+
+(To install cypress as dev dependencies and verify the file package.jason file)
+
+
+NPM INSTALLATION AND UPDATE
+
+What exactly the package.jason file do ?
+
+1)Node_modules have all the dependencies install that we had used in our project 
+
+2)Pratically it is not possible to share the project with node_modules folder as the 
+size of the folder is very large 
+
+3)So we ignore , node_modules folder and gave the project to other, push the project
+On other the hand the person with single command 
+
+---------------npm install 
+
+4)All the dependencies mentioned for project in package.jason file will be downloaded.
+and same ignored or deleted node_modules folder will be created.
+
+5)To install the latest version of cypress -
+
+---------------npm install cypress --save-dev cypress@latest
+
+6) Cypress gives you the update with new version available
+
+
+// CYPRESS OVERVIEW -->
+
+OPENING  THE CYPRESS FOR THE FIRST TIME 
+./node_modules/.bin/cypress open
+
+open the integration/example  folder and run any spec.js file 
+
+// CYPRESS TEST RUNNER
+
+https://docs.cypress.io/guides/core-concepts/test-runner.html#Overview
+
+Re-read the complete document contains all the information
+
+Keyboard Shortcuts
+There are keyboard shortcuts to quickly perform common actions from within the Test Runner.
+
+Key	 Action
+r	 Rerun tests
+s	 Stop tests
+f	 Bring focus to ‘specs’ window
+
+// CYPRESS PROJECT STRUCTURE 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

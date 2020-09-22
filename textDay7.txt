@@ -1,0 +1,184 @@
+Assertions
+
+WHY DO WE NEED ASSERTIONS 
+
+
+
+CHAI ASSERTIONS AND CYPRESS EXAMPLES
+
+https://docs.cypress.io/guides/references/assertions.html#Adding-New-Assertions
+
+https://www.chaijs.com/
+
+ADDING ASSERTIONS TO OUR EXISTING TESTS
+
+cypress/integration/automationteststore/dayFour.spec.js
+(Assertion , demo assertion added to the above files)
+
+CHAI JQUERY 
+
+cypress/integration/automationteststore/dayFour.spec.js
+(Assertion , demo assertion for attribute added to the following file for email address)
+
+ASSERTION CHALLENGE AND SOLUTION
+(Assertion , demo and solutions)
+cypress/integration/webuniversity/dayThree.spec.js
+
+CYPRESS CONTAINS
+
+https://docs.cypress.io/api/commands/contains.html#Syntax
+
+(Assertion , demo and solutions)
+cypress/integration/webuniversity/dayThree.spec.js
+
+REFENCING WINDOWS
+
+CY.DOCUMENT(), CY.TITLE() and CY.URL()
+
+https://docs.cypress.io/api/commands/title.html#Syntax
+https://docs.cypress.io/api/commands/document.html#Syntax
+https://docs.cypress.io/api/commands/url.html
+
+/Users/chinmaydeshpande/Desktop/cypress/cypress/integration/webuniversity/dayThree.spec.js
+
+it.only("should unable to submit form without required fields",() =>{
+        cy.visit('http://www.webdriveruniversity.com/Contact-Us/contactus.html')
+        cy.document().should('have.property','charset').and('eq','UTF-8')
+        cy.title().should('include','WebDriver | Contact Us')
+        cy.url().should('include','Contact-Us')
+        cy.get('input[name ="first_name"]').type("Chinmay")
+        cy.get('input[name ="last_name"]').type("Deshpande")
+        cy.get('textarea[name ="message"]').type("How can I learn cypress effectively")
+        cy.get('#form_buttons > input:nth-child(2)').click()
+        cy.get('body').contains('Error: all fields are required')
+     })
+
+
+// TRIGGERING TEST VIA COMMAND LINES
+
+// COMMAND LINE 
+
+GO to the command line and execute the commnad ./node_modules/.bin/cypress run 
+
+// HEADLESS ELECTRON BROWSER
+
+All the spec.js file will run in headless mode 
+
+For non- headless the default browser will be electron
+
+User will get complete reports and videos after test completion
+
+
+// NON - HEADLESS ELECTRON BROWSER 
+
+For non- headless the default browser will be electron
+
+https://docs.cypress.io/guides/guides/command-line.html
+
+./node_modules/.bin/cypress run --headed
+
+
+// NON - HEADLESS CHROME BROWSER 
+
+https://docs.cypress.io/guides/guides/command-line.html#Installation
+./node_modules/.bin/cypress run --browser chrome
+
+
+// TRIGGER INDIVIDUAL TEST
+
+Particular Test suite (One file)
+./node_modules/.bin/cypress run --spec cypress/integration/webuniversity/dayThree.spec.js
+
+Particular one folder(./node_modules/.bin/cypress run --spec cypress/integration/webdriver-uni/*)
+
+CYPRESS CHAINING COMMAND -->
+
+
+INTRODUCTION 
+
+https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#Chains-of-Commands
+
+please refer below mail for 
+
+MORE EXAMPLE ON CHAINING 
+get, find, contains, eq
+
+cypress/integration/automationteststore/daySix.spec.js
+please refer to the three testcases on above location
+(Please go and search whether the find return the list )
+
+
+
+ SYNCHRONOUS VS ASYNCHRONOUS --->
+ (Understanding Async…Section 18: 
+
+ SYNCHRONOUS VS ASYNCHRONOUS
+
+ please refer to the pdf in the folder
+
+ SYNCHRONOUS -- Example
+ 
+ Sync and Asynnc/sync.js
+
+ ASYNCHRONOUS - Example
+
+ Sync and Asynnc/Async.js
+
+ CYPRESS ASYNCHRONOUS NATURE
+
+ https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#Commands-Are-Asynchronous
+
+ 
+
+
+Logging - Practical
+Asynchronous JS Example
+
+Section 19: Logging - Practical
+Asynchronous JS Example
+1 / 2|7min
+
+Non Cypress Commands and Async
+
+Non cypress can change the order of execution
+
+Use console.log and chaange the order of execution
+
+console.log('Hello') /* In one of the file */
+
+Cypress log
+
+cy.log('Hello hi ')
+
+Again check the order of execution
+
+
+
+
+
+
+
+
+64. Non Cypress Commands and Async
+Nature
+4min
+
+65. Cypress log
+3min
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
